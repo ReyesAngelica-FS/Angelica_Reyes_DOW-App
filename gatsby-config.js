@@ -1,28 +1,16 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
   siteMetadata: {
-    title: `Angelica Reyes DOW App`,
-    siteUrl: `https://your-actual-site-url.com`, // Update to your real site URL
+    title: "Angelica's Blog",
+    siteUrl: "https://reyesangelica-fs.github.io/Angelica_Reyes_DOW-App", 
   },
   plugins: [
-    `gatsby-plugin-mdx`,
+    "gatsby-plugin-mdx",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/`,
+        name: "posts",
+        path: `${__dirname}/src/posts`,
       },
-      __key: "pages",
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `posts`,
-        path: `${__dirname}/src/posts/`,
-      },
-      __key: "posts",
     },
   ],
 }

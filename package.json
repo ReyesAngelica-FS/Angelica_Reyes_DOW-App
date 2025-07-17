@@ -4,6 +4,7 @@
   "private": true,
   "description": "angelica-reyes-dow-app",
   "author": "Angelica Reyes",
+  "homepage": "https://ReyesAngelica-FS.github.io/Angelica_Reyes_DOW-App",
   "keywords": [
     "gatsby"
   ],
@@ -12,15 +13,22 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "predeploy": "gatsby build",
+    "deploy": "gh-pages -d public"
   },
   "dependencies": {
     "@mdx-js/mdx": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "gatsby": "^5.14.1",
     "gatsby-plugin-mdx": "^5.14.1",
+    "gatsby-plugin-react-helmet": "^6.14.0",
     "gatsby-source-filesystem": "^5.14.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
