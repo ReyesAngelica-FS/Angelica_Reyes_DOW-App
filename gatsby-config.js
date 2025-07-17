@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `Angelica Reyes DOW App`,
-    siteUrl: `https://www.yourdomain.tld`, // Replace with your actual URL when deployed
+    siteUrl: `https://your-actual-site-url.com`, // Update to your real site URL
   },
   plugins: [
     `gatsby-plugin-mdx`,
@@ -25,4 +25,4 @@ module.exports = {
       __key: "posts",
     },
   ],
-};
+}

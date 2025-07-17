@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
         {posts.map(post => (
           <li key={post.id} style={{ marginBottom: "2rem" }}>
             <h3 style={{ marginBottom: "0.3rem" }}>
-              <Link to={`/posts/${post.slug}`} style={{ textDecoration: "none", color: "#663399" }}>
+              <Link to={`/posts${post.fields.slug}`} style={{ textDecoration: "none", color: "#663399" }}>
                 {post.frontmatter.title}
               </Link>
             </h3>
@@ -28,13 +28,15 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
         id
-        slug
         frontmatter {
           title
           date(formatString: "MMMM D, YYYY")
+        }
+        fields {
+          slug
         }
       }
     }
@@ -43,4 +45,4 @@ export const query = graphql`
 
 export default IndexPage
 
-export const Head = () => <title>Home</title>
+export const Head = () => <title>DOW App</title>
