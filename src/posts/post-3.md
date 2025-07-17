@@ -1,6 +1,7 @@
 ---
 title: "Three Tools That Helped Me Learn Web Dev"
 date: "2025-07-05"
+slug: "third-post"
 ---
 
 Here are 3 tools that made my learning journey smoother:

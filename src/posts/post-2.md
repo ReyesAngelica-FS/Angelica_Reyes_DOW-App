@@ -1,6 +1,7 @@
 ---
 title: "Why React Hooks Finally Clicked"
 date: "2025-07-06"
+slug: "second-post"
 ---
 
 At first, I didn’t fully understand `useState` or `useEffect`. But after building a few small apps, the concept finally clicked.

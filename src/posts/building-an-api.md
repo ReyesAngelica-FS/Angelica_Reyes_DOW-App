@@ -1,6 +1,7 @@
 ---
 title: "How I Built My First API with Express"
 date: "2025-07-14"
+slug: "api-post"
 ---
 
 ![API Diagram](/src/images/api-diagram.jpg)
