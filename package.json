@@ -12,7 +12,6 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve",
     "clean": "gatsby clean",
     "predeploy": "gatsby build",
     "deploy": "gh-pages -d public"
