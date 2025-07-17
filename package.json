@@ -1,8 +1,8 @@
 {
-  "name": "demo2",
+  "name": "angelica-reyes-dow-app",
   "version": "1.0.0",
   "private": true,
-  "description": "demo2",
+  "description": "angelica-reyes-dow-app",
   "author": "Angelica Reyes",
   "keywords": [
     "gatsby"
@@ -15,7 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@mdx-js/react": "^2.3.0",
+    "@mdx-js/react": "^3.1.0",
     "gatsby": "^5.14.1",
     "gatsby-plugin-mdx": "^5.14.1",
     "gatsby-source-filesystem": "^5.14.0",
