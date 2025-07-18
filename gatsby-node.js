@@ -1,12 +1,11 @@
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 
-// Add a `slug` field to each MDX node
 exports.onCreateNode = ({ node, actions, getNode }) => {
     const { createNodeField } = actions;
 
     if (node.internal.type === "Mdx") {
-        const slug = createFilePath({ node, getNode, basePath: "posts" });
+        const slug = createFilePath({ node, getNode, basePath: "src/posts" });
 
         createNodeField({
             node,
@@ -16,38 +15,31 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     }
 };
 
-// Create a page for each MDX post using its slug
-exports.createPages = async ({ graphql, actions, reporter }) => {
+exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
 
     const result = await graphql(`
         {
             allMdx {
-                nodes {
-                    frontmatter {
-                        title
-                        date
-                        slug
-                    }
+                    nodes {
+                    id
                     fields {
                         slug
+                    }
+                    internal {
+                        contentFilePath
                     }
                 }
             }
         }
     `);
 
-    if (result.errors) {
-        reporter.panic("🚨 ERROR loading MDX files", result.errors);
-        return;
-    }
+    const postTemplate = path.resolve(`./src/templates/post.js`);
 
-    const posts = result.data.allMdx.nodes;
-
-    posts.forEach((node) => {
+    result.data.allMdx.nodes.forEach((node) => {
         createPage({
-            path: `/posts${node.fields.slug}`, // becomes /posts/slug-name/
-            component: path.resolve(`./src/templates/post.js`), // uses your MDX template
+            path: `/posts${node.fields.slug}`,
+            component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
             context: {
                 id: node.id,
             },

@@ -1,0 +1,24 @@
+---
+title: "What is an API?"
+date: "2025-07-10"
+slug: "api-intro"
+---
+
+![API illustration](../images/api-graphic.png)
+
+Have you ever wondered how websites talk to each other? That’s what an **API** is for!
+
+**API** stands for _Application Programming Interface_. It allows one application to talk to another—kind of like a digital waiter that delivers your request and brings back what you asked for.
+
+### Why APIs Are Useful
+
+- You can get real-time data like weather, jokes, or news.
+- You don’t have to build everything yourself—just plug into an existing service.
+- APIs let you connect with tools like Google Maps, Spotify, or OpenWeather.
+
+### Quick Example in JavaScript
+
+```js
+fetch("https://api.example.com/data")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
